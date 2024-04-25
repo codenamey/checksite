@@ -7,7 +7,7 @@
 
 PIDFILE="/var/run/checksite.pid"
 LOGFILE="/var/log/checksite.log"
-SCRIPT="/root/bin/checksite.sh"
+SCRIPT="/usr/local/bin/checksite.sh"
 
 start() {
     if [ -e $PIDFILE ]; then

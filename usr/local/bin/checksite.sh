@@ -1,3 +1,3 @@
 #!/bin/bash 
-go run /root/bin/checksite.go
+go run /usr/local/bin/checksite.go
 
