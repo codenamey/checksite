@@ -1,0 +1,57 @@
+#!/bin/bash
+# chkconfig: 2345 20 80
+# description: Simple script to manage checksite service
+
+# Source function library.
+. /lib/lsb/init-functions
+
+PIDFILE="/var/run/checksite.pid"
+LOGFILE="/var/log/checksite.log"
+SCRIPT="/root/bin/checksite.sh"
+
+start() {
+    if [ -e $PIDFILE ]; then
+        echo "checksite is already running."
+    else
+        echo "Starting checksite..."
+        nohup $SCRIPT > $LOGFILE 2>&1 &
+        echo $! > $PIDFILE
+    fi
+}
+
+stop() {
+    if [ -e $PIDFILE ]; then
+        PID=$(cat $PIDFILE)
+        echo "Stopping checksite..."
+        kill $PID
+        rm $PIDFILE
+    else
+        echo "checksite is not running."
+    fi
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    status)
+        if [ -e $PIDFILE ]; then
+            echo "checksite is running."
+        else
+            echo "checksite is not running."
+        fi
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|status}"
+        exit 1
+        ;;
+esac
+
+exit 0
