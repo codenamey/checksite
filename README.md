@@ -30,10 +30,10 @@ Follow these steps to install Checksite on your system:
 
   Copy the checksite script to the appropriate system directories:
 
-  # Copy init script
+  ### Copy init script
   sudo cp etc/init.d/checksite /etc/init.d/
 
-  # Copy application scripts
+  ### Copy application scripts
   sudo cp usr/local/bin/checksite.sh /usr/local/bin/
 
   sudo chmod u+x /etc/init.d/checksite /usr/local/bin/checksite.sh
@@ -90,4 +90,9 @@ sudo /etc/init.d/checksite stop
 
 sudo /etc/init.d/checksite status
 ```
+
+## Authors
+Contributors names and contact info
+Lennart Takanen  
+lennart.takanen@gmail.com
 
