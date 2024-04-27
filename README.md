@@ -17,7 +17,13 @@ Follow these steps to install Checksite on your system:
 
 1. Clone the repository or download the files to your local machine.
 
-2. Copy the `checksite` script to the appropriate system directories:
+
+2. Run the installation script with administrative privileges:
+   ```bash
+   sudo ./install.sh
+   ```
+
+3. If you like install manually just Copy the `checksite` script to the appropriate system directories:
 
    ```bash
    # Copy init script
@@ -26,8 +32,7 @@ Follow these steps to install Checksite on your system:
    # Copy application scripts
    sudo cp usr/local/bin/checksite.sh /usr/local/bin/
 
-
-sudo chmod u+x /etc/init.d/checksite /usr/local/bin/checksite.sh
+   sudo chmod u+x /etc/init.d/checksite /usr/local/bin/checksite.sh
 ```
 
 ## File Structure
