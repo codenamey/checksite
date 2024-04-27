@@ -22,18 +22,44 @@ Follow these steps to install Checksite on your system:
    ```bash
    sudo ./install.sh
    ```
+   This script stops the service, removes the scripts from their locations, and cleans up any system startup configurations.
 
-3. If you like install manually just Copy the `checksite` script to the appropriate system directories:
 
-   ```bash
-   # Copy init script
-   sudo cp etc/init.d/checksite /etc/init.d/
-   
-   # Copy application scripts
-   sudo cp usr/local/bin/checksite.sh /usr/local/bin/
+##  Manual Installation
+  If you prefer to install the service manually, follow these steps:
 
-   sudo chmod u+x /etc/init.d/checksite /usr/local/bin/checksite.sh
-```
+  Copy the checksite script to the appropriate system directories:
+
+  # Copy init script
+  sudo cp etc/init.d/checksite /etc/init.d/
+
+  # Copy application scripts
+  sudo cp usr/local/bin/checksite.sh /usr/local/bin/
+
+  sudo chmod u+x /etc/init.d/checksite /usr/local/bin/checksite.sh
+
+## Uninstallation
+
+To remove Checksite from your system, follow these steps:
+
+### Automated Uninstallation
+
+Run the uninstallation script with administrative privileges:
+
+sudo ./uninstall.sh
+
+This script stops the service, removes the scripts from their locations, and cleans up any system startup configurations.
+
+### Manual Uninstallation
+
+If you need to uninstall the service manually, execute these commands:
+
+# Remove the init script and application script
+sudo rm /etc/init.d/checksite
+sudo rm /usr/local/bin/checksite.sh
+
+
+
 
 ## File Structure
 
